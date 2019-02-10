@@ -13,7 +13,7 @@ def dictionary
     'and' => '&'
   }
 end 
-ddef word_substituter(string)
+def word_substituter(string)
   words_array = string.split(" ")
   dictionary.each do |k, v|
     while words_array.include?(k)
