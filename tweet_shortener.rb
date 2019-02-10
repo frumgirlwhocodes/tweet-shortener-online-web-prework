@@ -13,20 +13,18 @@ def dictionary
     'and' => '&'
   }
 end 
-def word_substituter(tweet)
-  split_tweet = tweet.split
-
-   split_tweet.each_with_index do |word, index|
-    dictionary.each do |to_replace, replacement|
-      if word == to_replace
-        split_tweet[index] = replacement
-      end
+ddef word_substituter(string)
+  words_array = string.split(" ")
+  dictionary.each do |k, v|
+    while words_array.include?(k)
+      words_array[words_array.index(k)] = v
     end
   end
-split_tweet.join(" ")
+  words_array.join(" ")
 end
-def bulk_tweet_shortener(tweets)
+
+ def bulk_tweet_shortener(tweets)
   tweets.each do |tweet|
     puts word_substituter(tweet)
   end
-end 
+end
