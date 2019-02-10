@@ -1,19 +1,20 @@
-# Write your code here.
 def dictionary
   {
-    'hello' => 'hi',
-    'to' => 2,
-    'too' => 2,
-    'two' => 2,
-    'for' => 4,
-    'four' => 4,
-    'be' => 'b',
-    'you' => 'u',
-    'at' => '@',
-    'and' => '&'
-  }
-end 
-def word_substituter(string)
+  "hello" => "hi",
+  "to" => "2",
+  "two" => "2",
+  "too" => "2",
+  "for" => "4",
+  "For" => "4",
+  "four" => "4",
+  "be" => "b",
+  "you" => "u",
+  "at" => "@",
+  "and" => "&"
+}
+end
+
+ def word_substituter(string)
   words_array = string.split(" ")
   dictionary.each do |k, v|
     while words_array.include?(k)
@@ -28,7 +29,8 @@ end
     puts word_substituter(tweet)
   end
 end
-def selective_tweet_shortener(string)
+
+ def selective_tweet_shortener(string)
   string.length > 140 ? word_substituter(string) : string
 end
 
